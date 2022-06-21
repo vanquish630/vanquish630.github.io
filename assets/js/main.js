@@ -51,6 +51,26 @@ $('.profile .gmail').click(function (e) {
     }
   }
 
+  let getInfoHeight = () => {
+
+    var frameWidth = window.innerWidth;
+    if (frameWidth >= 991) {
+      let projectDetailsImgHeight = select(".swiper-wrapper").clientHeight;
+      projectDetailsImgHeight = projectDetailsImgHeight + "px";
+      select(".portfolio-info").style.height = projectDetailsImgHeight;
+
+    }
+
+
+  };
+
+
+  window.addEventListener('resize', getInfoHeight)
+
+
+  window.addEventListener('load', getInfoHeight)
+
+
   /**
    * Easy on scroll event listener 
    */
@@ -89,21 +109,21 @@ $('.profile .gmail').click(function (e) {
     })
   }
 
-  /**
-   * Back to top button
-   */
-  let backtotop = select('.back-to-top')
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active')
-      } else {
-        backtotop.classList.remove('active')
-      }
-    }
-    window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
-  }
+  // /**
+  //  * Back to top button
+  //  */
+  // let backtotop = select('.back-to-top')
+  // if (backtotop) {
+  //   const toggleBacktotop = () => {
+  //     if (window.scrollY > 100) {
+  //       backtotop.classList.add('active')
+  //     } else {
+  //       backtotop.classList.remove('active')
+  //     }
+  //   }
+  //   window.addEventListener('load', toggleBacktotop)
+  //   onscroll(document, toggleBacktotop)
+  // }
 
   /**
    * Mobile nav toggle
@@ -136,6 +156,7 @@ $('.profile .gmail').click(function (e) {
    * Scroll with ofset on page load with hash links in the url
    */
   window.addEventListener('load', () => {
+
     if (window.location.hash) {
       if (select(window.location.hash)) {
         scrollto(window.location.hash)
@@ -162,19 +183,19 @@ $('.profile .gmail').click(function (e) {
   /**
    * Skills animation
    */
-  let skilsContent = select('.skills-content');
-  if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: '80%',
-      handler: function (direction) {
-        let progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
-        });
-      }
-    })
-  }
+  // let skilsContent = select('.skills-content');
+  // if (skilsContent) {
+  //   new Waypoint({
+  //     element: skilsContent,
+  //     offset: '80%',
+  //     handler: function (direction) {
+  //       let progress = select('.progress .progress-bar', true);
+  //       progress.forEach((el) => {
+  //         el.style.width = el.getAttribute('aria-valuenow') + '%'
+  //       });
+  //     }
+  //   })
+  // }
 
   /**
    * Porfolio isotope and filter
@@ -230,34 +251,7 @@ $('.profile .gmail').click(function (e) {
     }
   });
 
-  /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20
-      },
 
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      }
-    }
-  });
 
   /**
    * Animation on scroll
@@ -272,3 +266,6 @@ $('.profile .gmail').click(function (e) {
   });
 
 })()
+
+
+
