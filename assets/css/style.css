@@ -59,6 +59,83 @@ h6 {
   opacity: 1;
 }
 
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 12px;
+  padding: 12px 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+}
+
+#snackbar h4 {
+  font-size: 16px;
+  margin: 0;
+  text-decoration: none;
+
+
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -67,7 +144,7 @@ h6 {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 250px;
+  width: 275px;
   /* transition: all ease-in-out 0.1s; */
   z-index: 9997;
   transition: all 0.5s;
@@ -117,13 +194,13 @@ h6 {
 }
 
 #header .profile .social-links a:hover {
-  background: #149ddd;
+  background: #4EB0AE;
   color: #fff;
   text-decoration: none;
 }
 
 #main {
-  margin-left: 250px;
+  margin-left: 275px;
 }
 
 
@@ -181,8 +258,8 @@ h6 {
 .nav-menu a i {
   font-size: 24px;
   padding-right: 8px;
-  /* color: #8C93A8; */
-  color: #C3DFE0;
+  color: #8C93A8;
+  /* color: #C3DFE0; */
 }
 
 .nav-menu a:hover,
@@ -200,7 +277,7 @@ h6 {
 .nav-menu .active i,
 .nav-menu .active:focus i,
 .nav-menu li:hover>a i {
-  color: #53D8FB;
+  color: #4EB0AE;
 }
 
 /* Mobile Navigation */
@@ -264,8 +341,8 @@ h6 {
 
 @media (min-width: 992px) {
   #hero {
-    width: calc(100% - 250px);
-    left: 250px;
+    width: calc(100% - 275px);
+    left: 275px;
   }
 }
 
@@ -369,7 +446,8 @@ body {
   display: block;
   width: 50px;
   height: 3px;
-  background: #53D8FB;
+  /* background: #53D8FB; sky blue crayola */
+  background: #4EB0AE;
   bottom: 0;
   left: 0;
 }
@@ -604,13 +682,13 @@ body {
 .portfolio #portfolio-filters li {
   cursor: pointer;
   display: inline-block;
-  padding: 10px 15px 8px 15px;
+  padding: 10px 15px 10px 15px;
   font-size: 14px;
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
   color: #272829;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   transition: all 0.3s ease-in-out;
 }
 

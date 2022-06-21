@@ -1,3 +1,26 @@
+function toast(text) {
+  var x = document.querySelector("#snackbar");
+  var snackText = document.querySelector("#snackbar h4");
+  snackText.innerHTML = text;
+  x.classList.toggle("show");
+  setTimeout(function () { x.classList.toggle("show"); }, 2000);
+}
+
+
+$('.profile .gmail').click(function (e) {
+  e.preventDefault();
+  var copyText = $(this).attr('href');
+
+  document.addEventListener('copy', function (e) {
+    e.clipboardData.setData('text/plain', copyText);
+    e.preventDefault();
+  }, true);
+
+  document.execCommand('copy');
+  console.log('copied email : ', copyText);
+  toast('copied email: ' + copyText);
+});
+
 
 (function () {
   "use strict";
