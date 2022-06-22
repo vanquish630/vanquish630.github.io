@@ -337,7 +337,7 @@ h6 {
   /* font-size: 8vw; */
   /* line-height: 5.2em; */
   font-weight: 700;
-  color: #fff;
+  color: #FFFFFC;
 }
 
 #hero p {
@@ -637,8 +637,8 @@ body {
 
 }
 
-/* 
-.resume .resume-title {
+
+.timeline .resume-title {
   font-size: 26px;
   font-weight: 700;
   margin-top: 20px;
@@ -646,14 +646,14 @@ body {
   color: #050d18;
 }
 
-.resume .resume-item {
+.timeline .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
   border-left: 2px solid #1f5297;
   position: relative;
 }
 
-.resume .resume-item h4 {
+.timeline .resume-item h4 {
   line-height: 18px;
   font-size: 18px;
   font-weight: 600;
@@ -663,28 +663,70 @@ body {
   margin-bottom: 10px;
 }
 
-.resume .resume-item h5 {
+.timeline .resume-item h5 {
   font-size: 16px;
-  background: #e4edf9;
-  padding: 5px 15px;
-  display: inline-block;
+  padding: 5px 15px 5px 0;
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  left: -180px;
+  position: absolute;
+
+
+}
+
+/* .timeline .resume-item .subtitle {
+  display: block;
+} */
+
+.timeline .resume-item p {
+  font-size: 16px;
+  /* padding: 5px 15px 5px 0; */
+  display: block;
+  /* font-weight: 600; */
+  /* margin-bottom: 10px; */
+}
+
+/* 
+.timeline .subtitle {
+
+  display: flex;
+  justify-content: space-between;
+
+
+} */
+
+/* .timeline .dates {
+  display: block;
+
+  justify-content: end;
+  align-items: center;
+} */
+
+
+
+.timeline .dates h5 {
+  font-size: 16px;
+  padding: 5px 15px 5px 0;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
-.resume .resume-item ul {
+
+.timeline .resume-item ul {
   padding-left: 20px;
 }
 
-.resume .resume-item ul li {
+.timeline .resume-item ul li {
   padding-bottom: 10px;
 }
 
-.resume .resume-item:last-child {
+/* 
+.timeline .resume-item:last-child {
   padding-bottom: 0;
-}
+} */
 
-.resume .resume-item::before {
+.timeline .resume-item::before {
   content: "";
   position: absolute;
   width: 16px;
@@ -694,7 +736,7 @@ body {
   top: 0;
   background: #fff;
   border: 2px solid #1f5297;
-} */
+}
 
 /*--------------------------------------------------------------
 # Project
