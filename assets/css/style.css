@@ -491,56 +491,6 @@ body {
   background: #236C68;
 }
 
-/*--------------------------------------------------------------
-# Facts
---------------------------------------------------------------*/
-.facts {
-  padding-bottom: 30px;
-}
-
-.about .count-box {
-  padding: 30px;
-  width: 100%;
-}
-
-.about .count-box i {
-  display: block;
-  font-size: 44px;
-  color: #149ddd;
-  float: left;
-  line-height: 0;
-}
-
-.about .count-box span {
-  font-size: 48px;
-  line-height: 40px;
-  display: block;
-  font-weight: 700;
-  color: #050d18;
-  margin-left: 60px;
-}
-
-.about .count-box p {
-  padding: 15px 0 0 0;
-  margin: 0 0 0 60px;
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
-  color: #122f57;
-}
-
-.about .count-box a {
-  font-weight: 600;
-  display: block;
-  margin-top: 20px;
-  color: #122f57;
-  font-size: 15px;
-  font-family: "Poppins", sans-serif;
-  transition: ease-in-out 0.3s;
-}
-
-.about .count-box a:hover {
-  color: #1f5297;
-}
 
 /*--------------------------------------------------------------
 # Skills
@@ -683,6 +633,23 @@ body {
 
 }
 
+.timeline .timeline-item {
+  display: block;
+  /* justify-items: center; */
+  margin-left: 60px;
+}
+
+/* .timeline .timeline-content {
+  display: flex;
+  align-items: center;
+} */
+
+@media (max-width: 768px) {
+  .timeline .timeline-item {
+    margin-left: 0px;
+  }
+}
+
 
 .timeline .resume-title {
   margin-left: 20%;
@@ -728,9 +695,10 @@ body {
 
 .timeline .resume-item .date h5 {
   font-size: 16px;
+  line-height: 1.2em;
   /* padding: 0px 0px 5px 0; */
   font-weight: 600;
-  margin: 0px 20px 0px 0px;
+  margin: 0px 10px 0px 0px;
 
 
 
@@ -757,31 +725,6 @@ body {
   /* margin-bottom: 10px; */
 }
 
-/* 
-.timeline .subtitle {
-
-  display: flex;
-  justify-content: space-between;
-
-
-} */
-
-/* .timeline .dates {
-  display: block;
-
-  justify-content: end;
-  align-items: center;
-} */
-
-
-
-/* .timeline .dates h5 {
-  font-size: 16px;
-  padding: 5px 15px 5px 0;
-  font-weight: 600;
-  margin-bottom: 10px;
-} */
-
 
 .timeline .resume-item .data ul {
   padding-left: 20px;
@@ -795,6 +738,8 @@ body {
 .timeline .resume-item:last-child {
   padding-bottom: 0;
 } */
+
+
 
 .timeline .resume-item .data::before {
   content: "";
@@ -813,6 +758,8 @@ body {
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
   margin-bottom: 30px;
+
+
 }
 
 .portfolio .section-title h2 {
@@ -872,6 +819,8 @@ body {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  border-radius: 15px;
+
 }
 
 .portfolio .portfolio-wrap::before {
@@ -882,7 +831,7 @@ body {
   right: 0;
   top: 0;
   bottom: 0;
-  transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.2s;
   z-index: 2;
   opacity: 0;
 }
@@ -891,7 +840,7 @@ body {
   opacity: 1;
   left: 0;
   right: 0;
-  bottom: -70px;
+  bottom: -150px;
   z-index: 3;
   position: absolute;
   transition: all ease-in-out 0.2s;
@@ -904,11 +853,17 @@ body {
   padding: 10px 0;
   font-size: 28px;
   text-align: center;
+  font-family: "Saira Condensed";
   /* background: rgba(20, 157, 221, 0.75); */
   background: rgba(18, 37, 66, 0.75);
   /* background: rgba(28, 64, 115, 0.75); */
   transition: 0.2s;
   width: 100%;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a p {
+  font-size: 20px;
+  font-family: "Raleway";
 }
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
@@ -932,6 +887,8 @@ body {
 .portfolio .portfolio-wrap:hover .portfolio-links {
   opacity: 1;
   bottom: 0;
+  /* z-index: 3; */
+
 }
 
 
