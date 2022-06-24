@@ -596,9 +596,9 @@ body {
 }
 
 
-.skills .skills-item {
+/* .skills .skills-item {
   transition: all ease-in-out 0.3s;
-}
+} */
 
 .skills .progress {
   height: 60px;
