@@ -84,17 +84,67 @@ $('.profile .gmail').click(function (e) {
   let navbarlinks = select('#navbar .scrollto', true)
   const navbarlinksActive = () => {
     let position = window.scrollY + 200
-    navbarlinks.forEach(navbarlink => {
+    let noItems = navbarlinks.length
+    // console.log(position)
+    // console.log(noItems)
+
+    for (let indx = 0; indx < noItems; indx++) {
+
+      let navbarlink = navbarlinks[indx];
+      // console.log(navbarlink);
+
       if (!navbarlink.hash) return
       let section = select(navbarlink.hash)
+      // console.log(section.offsetTop)
+
       if (!section) return
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        navbarlink.classList.add('active')
-      } else {
-        navbarlink.classList.remove('active')
+
+      if (indx == noItems - 1) {
+
+
+
+        if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+          navbarlink.classList.add('active')
+        } else {
+          navbarlink.classList.remove('active')
+        }
+
       }
-    })
+      else {
+        let Nextsection = select(navbarlinks[indx + 1].hash)
+        // console.log(Nextsection.offsetTop)
+
+        if (position >= section.offsetTop && position <= (Nextsection.offsetTop)) {
+          navbarlink.classList.add('active')
+        } else {
+          navbarlink.classList.remove('active')
+        }
+      }
+
+
+
+
+
+    }
+
+    // navbarlinks.forEach(navbarlink => {
+    //   if (!navbarlink.hash) return
+    //   let section = select(navbarlink.hash)
+    //   console.log(navbarlink.hash)
+    //   console.log(position)
+    //   console.log(section.offsetTop)
+
+    //   if (!section) return
+    //   if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+    //     navbarlink.classList.add('active')
+    //   } else {
+    //     navbarlink.classList.remove('active')
+    //   }
+    // })
   }
+
+
+
   window.addEventListener('load', navbarlinksActive)
   onscroll(document, navbarlinksActive)
 
@@ -167,18 +217,18 @@ $('.profile .gmail').click(function (e) {
   /**
    * Hero type effect
    */
-  const typed = select('.typed')
-  if (typed) {
-    let typed_strings = typed.getAttribute('data-typed-items')
-    typed_strings = typed_strings.split(',')
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
-  }
+  // const typed = select('.typed')
+  // if (typed) {
+  //   let typed_strings = typed.getAttribute('data-typed-items')
+  //   typed_strings = typed_strings.split(',')
+  //   new Typed('.typed', {
+  //     strings: typed_strings,
+  //     loop: true,
+  //     typeSpeed: 100,
+  //     backSpeed: 50,
+  //     backDelay: 2000
+  //   });
+  // }
 
   /**
    * Skills animation
@@ -196,6 +246,40 @@ $('.profile .gmail').click(function (e) {
       }
     })
   }
+
+
+
+  /**
+   * Skill filter
+   */
+  window.addEventListener('load', () => {
+    let portfolioContainer = select('.skills-content');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.skills-item'
+      });
+
+      let portfolioFilters = select('#skills-filters li', true);
+
+      on('click', '#skills-filters li', function (e) {
+        e.preventDefault();
+        portfolioFilters.forEach(function (el) {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        portfolioIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+        portfolioIsotope.on('arrangeComplete', function () {
+          AOS.refresh()
+        });
+      }, true);
+    }
+
+  });
+
+
 
   /**
    * Porfolio isotope and filter
