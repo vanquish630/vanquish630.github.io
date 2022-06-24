@@ -697,9 +697,9 @@ body {
   color: #050d18;
 }
 
-.timeline .resume-item {
+/* .timeline .resume-item {
   margin-left: 10px;
-}
+} */
 
 .timeline .resume-item .data {
   padding: 0 0 20px 20px;
@@ -723,17 +723,27 @@ body {
 .timeline .resume-item .date {
   align-items: center;
   width: 20%;
+  margin-bottom: 10px;
 }
 
 .timeline .resume-item .date h5 {
   font-size: 16px;
-  padding: 0px 15px 5px 0;
+  /* padding: 0px 0px 5px 0; */
   font-weight: 600;
-  margin: 0px 0px 0px 0px;
+  margin: 0px 20px 0px 0px;
 
 
 
 }
+
+@media (max-width: 768px) {
+  .timeline .resume-item .date h5 {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+
 
 /* .timeline .resume-item .subtitle {
   display: block;
