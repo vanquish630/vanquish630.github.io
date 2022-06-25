@@ -120,6 +120,8 @@ h6 {
   overflow-y: auto;
   background: url("../img/headerPortfolio.png") top center;
   background-size: 120%;
+  background-repeat: repeat-y;
+
 }
 
 #header .profile img {
